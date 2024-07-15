@@ -44,6 +44,16 @@ impl Default for Person {
 
 impl From<&str> for Person {
     fn from(s: &str) -> Person {
+        let mut parts = s.split(',');
+        let Some(name) = parts.next() else { return Person::default() };
+        let Some(age_string) = parts.next() else { return Person::default() };
+        let Ok(age) = age_string.to_string().parse::<usize>() else { return Person::default() };
+
+        if name.len() == 0 {
+            Person::default()
+        } else {
+            Person {name: String::from(name), age}
+        }
     }
 }
 
