@@ -4,7 +4,7 @@ struct Point {
 }
 
 enum Message {
-    Resize {width: u64, height: u64},
+    Resize { width: u64, height: u64 },
     Move(Point),
     Echo(String),
     ChangeColor(u8, u8, u8),
@@ -46,7 +46,7 @@ impl State {
     fn process(&mut self, message: Message) {
         match message {
             Message::Resize { width, height } => self.resize(width, height),
-            Message::Move(point ) => self.move_position(point),
+            Message::Move(point) => self.move_position(point),
             Message::Echo(msg) => self.echo(msg),
             Message::ChangeColor(red, green, blue) => self.change_color(red, green, blue),
             Message::Quit => self.quit(),

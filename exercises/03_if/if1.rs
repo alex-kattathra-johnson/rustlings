@@ -1,10 +1,14 @@
 fn bigger(a: i32, b: i32) -> i32 {
-    if a > b {a} else {b}
+    if a > b {
+        a
+    } else {
+        b
+    }
 }
 
 fn main() {
     // You can optionally experiment here.
-    bigger(4,6);
+    bigger(4, 6);
 }
 
 // Don't mind this for now :)
