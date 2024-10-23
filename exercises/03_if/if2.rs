@@ -1,14 +1,14 @@
 // TODO: Fix the compiler error on this function.
 fn foo_if_fizz(fizzish: &str) -> &str {
-    if fizzish == "fizz" {
-        "foo"
-    } else {
-        1
+    match fizzish {
+        "fizz" => "foo",
+        "fuzz" => "bar",
+        _ =>"baz",
     }
 }
 
 fn main() {
-    // You can optionally experiment here.
+    foo_if_fizz("blah");
 }
 
 // TODO: Read the tests to understand the desired behavior.
